@@ -32,7 +32,16 @@ public class ProductController {
 
     @GetMapping("/{id:\\d+}")
     public ProductDTO getById(@PathVariable Long id) {
+        String port = environment.getProperty("local.server.port");
+
+        System.out.println(
+                ">>> GET /api/products/" + id
+                        + " served by PRODUCT-SERVICE on port: "
+                        + port
+        );
+
         return service.getProductById(id);
+
     }
 
     @PostMapping

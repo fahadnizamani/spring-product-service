@@ -2,6 +2,8 @@ package com.example.product_service.entity;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "products")
 public class Product {
@@ -12,12 +14,14 @@ public class Product {
 
     private String name;
     private String description;
-    private double price;
+
+    @Column(precision = 19, scale = 2)
+    private BigDecimal price;
     private int quantity;
 
     public Product() {}
 
-    public Product(String name, String description, double price, int quantity) {
+    public Product(String name, String description, BigDecimal price, int quantity) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -49,11 +53,11 @@ public class Product {
         this.description = description;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

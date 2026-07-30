@@ -1,16 +1,18 @@
 package com.example.product_service.dto;
 
+import java.math.BigDecimal;
+
 public class ProductDTO {
 
     private Long id;
     private String name;
     private String description;
-    private double price;
+    private BigDecimal price;
     private int quantity;
 
     public ProductDTO() {}
 
-    public ProductDTO(Long id, String name, String description, double price, int quantity) {
+    public ProductDTO(Long id, String name, String description, BigDecimal price, int quantity) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -43,11 +45,11 @@ public class ProductDTO {
         this.description = description;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
